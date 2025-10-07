@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CV - Sinem Dilan Guruplar</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for social media links -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Custom styles for the CV */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* light gray background */
+        }
+        /* Style for active tab */
+        .tab-active {
+            background-color: #1e40af; /* dark blue */
+            color: white;
+            border-bottom-color: transparent;
+        }
+        /* Smooth transition for tab content */
+        .tab-content {
+            display: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Style for visible tab content */
+        .tab-content-active {
+            display: block;
+            opacity: 1;
+        }
+        /* General card styling */
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        /* Custom list style */
+        .timeline-item ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        .timeline-item ul li::before {
+            content: '•';
+            color: #1e40af; /* dark blue */
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+
+        <!-- Header Section -->
+        <header class="flex flex-col sm:flex-row items-center mb-8 card p-6">
+            <div class="w-32 h-32 mb-4 sm:mb-0 sm:mr-6">
+                 <!-- Placeholder for the profile picture -->
+                 <img src="https://placehold.co/128x128/e2e8f0/64748b?text=SG" alt="Sinem Dilan Guruplar" class="rounded-full object-cover w-full h-full border-4 border-white shadow-md">
+            </div>
+            <div class="text-center sm:text-left">
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900">Sinem Dilan Guruplar</h1>
+                <h2 class="text-xl text-blue-800 font-semibold mt-1">Computer Scientist & Systems Engineer</h2>
+                <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 text-gray-600">
+                    <div class="flex items-center">
+                        <i data-lucide="mail" class="w-4 h-4 mr-2 text-blue-800"></i>
+                        <span>sinemguruplar@outlook.de</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="phone" class="w-4 h-4 mr-2 text-blue-800"></i>
+                        <span>0534 724 20 78</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-lucide="cake" class="w-4 h-4 mr-2 text-blue-800"></i>
+                        <span>23/01/1989 in Heilbronn, Germany</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content with Interactive Tabs -->
+        <main class="card p-6 sm:p-8">
+            <!-- Tab Navigation -->
+            <div class="border-b border-gray-200 mb-6">
+                <nav class="-mb-px flex flex-wrap gap-2 sm:gap-4" aria-label="Tabs">
+                    <button onclick="changeTab('experience')" class="tab-button tab-active text-sm sm:text-base font-medium py-3 px-4 rounded-t-lg transition-colors duration-200" id="experience-tab">
+                        Professional Experience
+                    </button>
+                    <button onclick="changeTab('education')" class="tab-button text-gray-600 hover:bg-blue-100 hover:text-blue-800 text-sm sm:text-base font-medium py-3 px-4 rounded-t-lg transition-colors duration-200" id="education-tab">
+                        Education
+                    </button>
+                    <button onclick="changeTab('skills')" class="tab-button text-gray-600 hover:bg-blue-100 hover:text-blue-800 text-sm sm:text-base font-medium py-3 px-4 rounded-t-lg transition-colors duration-200" id="skills-tab">
+                        Skills
+                    </button>
+                    <button onclick="changeTab('interests')" class="tab-button text-gray-600 hover:bg-blue-100 hover:text-blue-800 text-sm sm:text-base font-medium py-3 px-4 rounded-t-lg transition-colors duration-200" id="interests-tab">
+                        Interests & More
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Tab Content Sections -->
+            <div>
+                <!-- Experience Section -->
+                <div id="experience" class="tab-content tab-content-active space-y-8">
+                    <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Feb 2024 - Present</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                                <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-800">Senior Business Analyst</h3>
+                                <p class="text-md text-gray-600">NTT Data at Mercedes Benz Otomotiv</p>
+                                <ul class="mt-2 text-gray-700 space-y-1 text-sm">
+                                    <li>Process Management: Coordinating work activities including planning and organizing.</li>
+                                    <li>Data analysis and determining process improvements in Jira.</li>
+                                    <li>Documentation of business processes.</li>
+                                    <li>Managing tool requirements, ensuring technical solutions align with business needs.</li>
+                                    <li>Solution implementation, testing, reporting, and analysis.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Dec 2019 - May 2022</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                                <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-800">IT Consultant & IT Security Manager</h3>
+                                <p class="text-md text-gray-600">MHP Porsche Company at Porsche AG</p>
+                                <ul class="mt-2 text-gray-700 space-y-1 text-sm">
+                                    <li>Function owner of Porsche 911 model series and Security Manager.</li>
+                                    <li>Elaboration of process standards and documentation of UNECE Security requirements.</li>
+                                    <li>Functional responsible manager for end-to-end "Connect-Services".</li>
+                                    <li>Managed failure analysis, change management, and maturity level tracking.</li>
+                                    <li>Training & mentoring of new employees.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="flex items-start">
+                            <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Feb 2018 - Nov 2019</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                               <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold text-gray-800">Development & Systems Engineer</h3>
+                                <p class="text-md text-gray-600">Rohde & Schwarz</p>
+                                <ul class="mt-2 text-gray-700 space-y-1 text-sm">
+                                    <li>System and software module integration.</li>
+                                    <li>Implementation of new tools and software components in C++ (Visual Studio).</li>
+                                    <li>Implementation of Embedded Systems and Microcontrollers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Section -->
+                <div id="education" class="tab-content space-y-6">
+                     <div class="timeline-item">
+                        <div class="flex items-start">
+                             <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Oct 2016 - Feb 2018</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                               <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold">Master of Engineering</h3>
+                                <p class="text-md text-gray-600">Hochschule Albstadt-Sigmaringen</p>
+                                <p class="mt-2 text-sm text-gray-500 italic">Thesis: "Controlling a laser pointer in a globe with speech recognition using Raspberry Pi"</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="flex items-start">
+                             <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Oct 2012 - Jul 2016</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                               <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold">Bachelor of Engineering</h3>
+                                <p class="text-md text-gray-600">Hochschule Albstadt-Sigmaringen</p>
+                                <p class="mt-2 text-sm text-gray-500 italic">Thesis: "Building a parallel robot and driving it with a microcontroller"</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="flex items-start">
+                             <div class="w-1/4 text-sm text-gray-500 font-medium pr-4 text-right">Oct 2010 - Sep 2012</div>
+                            <div class="flex-1 border-l-2 border-blue-200 pl-6 pb-6 relative">
+                               <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-800 rounded-full border-4 border-white"></div>
+                                <h3 class="text-lg font-semibold">Commercial Correspondence Clerk</h3>
+                                <p class="text-md text-gray-600">Kolping Bildungszentrum</p>
+                                <p class="mt-2 text-sm text-gray-500">Specialization: English/French</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div id="skills" class="tab-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 border-b-2 border-blue-200 pb-2">Programming & Tech</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Java</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">C</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">C++</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Assembler</span>
+                                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Microcontroller Programming</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 border-b-2 border-blue-200 pb-2">Tools & Software</h3>
+                             <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Visual Studio</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Eclipse</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Jira</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">SAP ERP</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">PowerBI</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Visio</span>
+                                 <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Jenkins</span>
+                                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">EAGLE</span>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2">
+                             <h3 class="text-lg font-semibold mb-3 border-b-2 border-blue-200 pb-2">Languages</h3>
+                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                                 <div>
+                                     <p class="font-semibold">German</p>
+                                     <p class="text-sm text-gray-600">Native</p>
+                                 </div>
+                                  <div>
+                                     <p class="font-semibold">Turkish</p>
+                                     <p class="text-sm text-gray-600">Native</p>
+                                 </div>
+                                 <div>
+                                     <p class="font-semibold">English</p>
+                                     <p class="text-sm text-gray-600">Fluent / Professional</p>
+                                 </div>
+                                 <div>
+                                     <p class="font-semibold">French</p>
+                                     <p class="text-sm text-gray-600">Working Proficiency</p>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interests Section -->
+                <div id="interests" class="tab-content">
+                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 border-b-2 border-blue-200 pb-2 flex items-center">
+                                <i data-lucide="award" class="w-5 h-5 mr-2 text-blue-800"></i>
+                                Additional Education
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start"><span class="mr-2 text-blue-800">&bull;</span> Personal Fitness Trainer & Fitness Nutrition Coach</li>
+                                <li class="flex items-start"><span class="mr-2 text-blue-800">&bull;</span> Meditation Trainer, Stress Coach</li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h3 class="text-lg font-semibold mb-3 border-b-2 border-blue-200 pb-2 flex items-center">
+                                 <i data-lucide="heart" class="w-5 h-5 mr-2 text-blue-800"></i>
+                                Interests
+                            </h3>
+                             <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start"><span class="mr-2 text-blue-800">&bull;</span> Reading about Self-development, Psychology, Science, and Physics.</li>
+                                <li class="flex items-start"><span class="mr-2 text-blue-800">&bull;</span> Outdoor activities and fitness.</li>
+                                <li class="flex items-start"><span class="mr-2 text-blue-800">&bull;</span> Traveling & discovering new places and cultures.</li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-8 text-sm text-gray-500">
+            <p>Interactive CV created for Sinem Dilan Guruplar | September 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for tab functionality
+        function changeTab(tabId) {
+            // Hide all tab content
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('tab-content-active');
+            });
+
+            // Deactivate all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('tab-active');
+                button.classList.add('text-gray-600', 'hover:bg-blue-100', 'hover:text-blue-800');
+            });
+
+            // Show the selected tab content
+            const selectedContent = document.getElementById(tabId);
+            if (selectedContent) {
+                selectedContent.classList.add('tab-content-active');
+            }
+
+            // Activate the selected tab button
+            const selectedButton = document.getElementById(tabId + '-tab');
+            if (selectedButton) {
+                selectedButton.classList.add('tab-active');
+                selectedButton.classList.remove('text-gray-600', 'hover:bg-blue-100', 'hover:text-blue-800');
+            }
+        }
+        
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
